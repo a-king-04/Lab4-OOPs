@@ -1,0 +1,51 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+// <applet code="Que21" width="300" height="300"></applet>
+
+public class Que21 extends Applet implements ItemListener {
+    Choice color;
+
+    public void init() {
+
+        color = new Choice();
+        color.add("Red");
+        color.add("Blue");
+        color.add("Green");
+        color.add("Yellow");
+        color.add("Orange");
+        color.add("Black");
+
+        add(new Label("Choose color:"));
+        add(color);
+
+        color.addItemListener(this);
+    }
+
+    public void itemStateChanged(ItemEvent e) {
+
+        String colorName = color.getSelectedItem();
+        switch (colorName) {
+            case "Red":
+                setBackground(Color.RED);
+                break;
+            case "Blue":
+                setBackground(Color.BLUE);
+                break;
+            case "Green":
+                setBackground(Color.GREEN);
+                break;
+            case "Yellow":
+                setBackground(Color.YELLOW);
+                break;
+            case "Orange":
+                setBackground(Color.ORANGE);
+                break;
+            case "purple":
+                setBackground(Color.BLACK);
+                break;
+            default:
+                setBackground(Color.WHITE);
+        }
+    }
+}
