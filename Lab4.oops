@@ -1,0 +1,28 @@
+import java.applet.*;
+import java.awt.*;
+import java.util.Scanner;
+import java.awt.Dimension;
+
+// <applet code="Que1" width="600" height="600"> </applet>
+public class Que1 extends Applet {
+
+    TextField t1;
+
+    public void init() {
+
+        t1 = new TextField(30);
+        add(t1);
+    }
+
+    public void paint(Graphics g) {
+
+        g.drawString("Name:", 50, 50);
+        String str1;
+        str1 = t1.getText();
+        String s = "Hello " + str1;
+
+        Dimension d = getSize();
+        g.drawString(s, d.width / 2, d.height / 2);
+
+    }
+}
